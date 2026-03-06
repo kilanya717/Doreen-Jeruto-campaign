@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hon. Doreen Jeruto Rop Kilanya · Women Rep Nandi</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Segoe UI', Roboto, system-ui, -apple-system, sans-serif; background:#faf9f7; color:#1e2b2f; line-height:1.5;}
+
+/* WRAPPER */
+.campaign-wrapper {max-width:1400px; margin:0 auto; background:white;}
+
+/* HERO */
+.hero {position:relative; min-height:85vh; display:flex; align-items:center; justify-content:center; text-align:center; color:white; background-size:cover; background-position:center 30%; background-repeat:no-repeat; transition:background-image 0.25s ease;}
+.hero::before {content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(10,30,40,0.55); z-index:1;}
+.hero-content {position:relative; z-index:3; max-width:900px; padding:2rem 1.5rem; text-shadow:0 4px 12px rgba(0,0,0,0.3);}
+.hero-content h1 {font-size:clamp(2.8rem,10vw,5.2rem); font-weight:700; letter-spacing:-0.02em; line-height:1.2; margin-bottom:0.25rem;}
+.hero-content h2 {font-size:clamp(1.6rem,5vw,2.4rem); font-weight:400; opacity:0.95; margin-bottom:1.5rem; border-bottom:2px solid rgba(255,215,0,0.7); display:inline-block; padding-bottom:0.25rem;}
+.tagline {font-size:1.5rem; font-weight:300; margin-top:1rem; background:rgba(0,0,0,0.2); backdrop-filter:blur(4px); display:inline-block; padding:0.5rem 2rem; border-radius:60px;}
+
+/* UPLOAD TOOLBAR */
+.upload-toolbar {display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; background:#ffffffd9; backdrop-filter:blur(8px); padding:1.2rem 2rem; border-radius:60px; margin:1rem auto 2rem auto; width:fit-content; box-shadow:0 5px 15px rgba(0,0,0,0.05); border:1px solid #e2d5bb;}
+.upload-btn {display:flex; align-items:center; gap:10px; background:white; border:1px solid #c0b59e; border-radius:40px; padding:0.5rem 1.4rem 0.5rem 1rem; font-size:1rem; font-weight:500; color:#1f4b57; cursor:pointer; transition: all 0.2s; box-shadow:0 2px 6px rgba(0,0,0,0.02);}
+.upload-btn i {font-size:1.2rem; color:#ad8739;}
+.upload-btn:hover {background:#f6f2e9; border-color:#b18431;}
+input[type="file"] {display:none;}
+.reset-note {font-size:0.85rem; color:#5f6c72; margin-left:0.5rem;}
+
+/* PROFILE CARD */
+.profile-section {position:relative; margin-top:-5rem; z-index:10; display:flex; justify-content:center; padding:0 1.5rem 3rem 1.5rem;}
+.profile-card {background:white; border-radius:32px; box-shadow:0 25px 45px -12px rgba(0,40,50,0.3); max-width:1000px; width:100%; display:flex; flex-wrap:wrap; align-items:center; padding:2rem; gap:2rem; border:1px solid rgba(255,215,0,0.3);}
+.profile-image-frame {flex:0 0 200px; width:200px; height:200px; border-radius:50%; background:#e0e9ee; box-shadow:0 10px 25px rgba(0,30,40,0.2); overflow:hidden; border:4px solid white; outline:1px solid #cdb77e; display:flex; align-items:center; justify-content:center; color:#3d5f6b; font-size:3rem;}
+.profile-image-frame img {width:100%; height:100%; object-fit:cover; display:block;}
+.profile-details {flex:1; min-width:260px;}
+.profile-details h3 {font-size:2.2rem; font-weight:600; color:#0d3b45; line-height:1.2;}
+.profile-details .office {font-size:1.2rem; color:#b9842d; font-weight:500; letter-spacing:1px; margin:0.25rem 0 0.5rem 0; text-transform:uppercase;}
+.bio {font-size:1.1rem; color:#2a4049; margin:1rem 0 1.5rem 0; max-width:550px;}
+.pill-info {display:flex; flex-wrap:wrap; gap:0.8rem 1.5rem; margin-top:0.5rem;}
+.pill-info span {background:#f0f5f7; padding:0.35rem 1rem; border-radius:40px; font-size:0.95rem; color:#1c5b6b; display:inline-flex; align-items:center; gap:6px; border-left:3px solid #d8b14e;}
+
+/* MANIFESTO SECTION */
+.platform-section {padding:3rem 2rem 4rem 2rem; background:#ffffff;}
+.section-title {text-align:center; font-size:2.5rem; font-weight:500; color:#12363f; margin-bottom:2rem;}
+.section-title span {border-bottom:3px solid #eab739; padding-bottom:6px;}
+.issues-grid {display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; max-width:1100px; margin:0 auto;}
+.issue-item {background:#f8f6f2; border-radius:28px; padding:2rem 1.8rem; flex:1 1 250px; text-align:center; transition:transform 0.2s; border:1px solid #f0e5d2; cursor:pointer;}
+.issue-item i {font-size:2.6rem; color:#c6993c; margin-bottom:1rem;}
+.issue-item h4 {font-size:1.5rem; margin-bottom:0.8rem; color:#154753;}
+.issue-item p {display:none; color:#0d3b45; font-size:1rem; line-height:1.4; margin-top:0.5rem;}
+
+/* ADMIN GALLERY */
+.admin-gallery {padding:3rem 2rem; background:#f8f6f2; text-align:center;}
+.admin-gallery h3 {margin-bottom:1rem;}
+.gallery-container {display:flex; flex-wrap:wrap; justify-content:center; gap:1rem;}
+.gallery-container img {width:200px; height:150px; object-fit:cover; border-radius:12px;}
+
+/* COMMENTS SECTION */
+.comments-section {padding:3rem 2rem; background:#ffffff;}
+.comments-section h3 {text-align:center; margin-bottom:1rem;}
+.comment-form {display:flex; flex-direction:column; align-items:center; gap:0.8rem; max-width:500px; margin:0 auto;}
+.comment-form input, .comment-form textarea {width:100%; padding:0.5rem 1rem; border-radius:8px; border:1px solid #ccc; font-size:1rem;}
+.comment-form button {padding:0.6rem 1.2rem; border:none; border-radius:40px; background:#b9842d; color:white; cursor:pointer; font-weight:500;}
+.comment-list {max-width:600px; margin:1rem auto; display:flex; flex-direction:column; gap:1rem;}
+
+/* FOOTER */
+.footer {background:#102e36; color:#e5eae6; text-align:center; padding:2rem; font-size:1rem;}
+.footer strong {color:#f5c84e;}
+
+/* RESPONSIVE */
+@media (max-width:700px) {
+.profile-card {flex-direction:column; text-align:center; padding:1.8rem 1.5rem;}
+.profile-image-frame {width:170px; height:170px; flex-basis:170px;}
+.upload-toolbar {flex-direction:column; align-items:center; border-radius:32px; padding:1rem;}
+.issues-grid {flex-direction:column; align-items:center;}
+.gallery-container {flex-direction:column; align-items:center;}
+}
+</style>
+</head>
+<body>
+<div class="campaign-wrapper">
+
+    <!-- HERO -->
+    <div class="hero" id="heroBackground" style="background-image: url('');">
+        <div class="hero-content">
+            <h1>DOREEN JERUTO ROP KILANYA</h1>
+            <h2>WOMAN REPRESENTATIVE</h2>
+            <div class="tagline">◆  Umoja · Progress · Dignity  ◆</div>
+        </div>
+    </div>
+
+    <!-- Upload toolbar -->
+    <div style="display:flex; justify-content:center;">
+        <div class="upload-toolbar">
+            <label for="bgUpload" class="upload-btn"><i class="fas fa-image"></i> Background image</label>
+            <input type="file" id="bgUpload" accept="image/*">
+            <label for="profileUpload" class="upload-btn"><i class="fas fa-user-circle"></i> Profile image</label>
+            <input type="file" id="profileUpload" accept="image/*">
+            <span class="reset-note"><i class="fas fa-rotate-left"></i> re-upload anytime</span>
+        </div>
+    </div>
+
+    <!-- PROFILE CARD -->
+    <div class="profile-section">
+        <div class="profile-card">
+            <div class="profile-image-frame default" id="profileContainer">
+                <i class="fas fa-female"></i>
+            </div>
+            <div class="profile-details">
+                <h3>Hon. Doreen Jeruto Rop Kilanya</h3>
+                <div class="office">WOMEN REP · NANDI COUNTY</div>
+                <p class="bio">Seasoned leader, advocate for girl-child education, economic empowerment & inclusive health. Serving with integrity and a listening heart.</p>
+                <div class="pill-info">
+                    <span><i class="fas fa-graduation-cap"></i> MSc. Public Policy</span>
+                    <span><i class="fas fa-hand-holding-heart"></i> 10+ yrs grassroots</span>
+                    <span><i class="fas fa-fw fa-people-arrows"></i> Family & youth</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MANIFESTO -->
+    <div class="platform-section">
+        <div class="section-title"><span>· Campaign Manifesto ·</span></div>
+        <div class="issues-grid" id="manifestoGrid">
+            <div class="issue-item"><i class="fas fa-fw fa-book-open"></i><h4>Education</h4><p>Scholarships & mentorship for youth, ECDE upgrade, teacher training, digital literacy programs & girl-child support.</p></div>
+            <div class="issue-item"><i class="fas fa-fw fa-heartbeat"></i><h4>Health</h4><p>Maternal health, cancer screening, mobile clinics, mental health support, access to medicines & PWD health programs.</p></div>
+            <div class="issue-item"><i class="fas fa-fw fa-briefcase"></i><h4>Women Enterprise</h4><p>Revolving funds, skills training, mentorship, access to markets & technology for small women businesses.</p></div>
+            <div class="issue-item"><i class="fas fa-fw fa-leaf"></i><h4>Agriculture</h4><p>Support women farmers, sustainable farming practices, access to markets, green initiatives, youth in agriculture.</p></div>
+            <div class="issue-item"><i class="fas fa-fw fa-universal-access"></i><h4>PWD Support</h4><p>Accessibility programs, inclusive education, workplace support, community awareness & assistive devices.</p></div>
+        </div>
+    </div>
+
+    <!-- ADMIN GALLERY -->
+    <div class="admin-gallery">
+        <h3>Admin: Add Campaign Images</h3>
+        <input type="file" id="galleryUpload" accept="image/*" multiple>
+        <div class="gallery-container" id="galleryContainer"></div>
+    </div>
+
+    <!-- COMMENTS -->
+    <div class="comments-section">
+        <h3>Leave a Comment</h3>
+        <form class="comment-form" id="commentForm">
+            <input type="text" id="commentName" placeholder="Your Name" required>
+            <textarea id="commentText" placeholder="Your Comment" rows="3" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="comment-list" id="commentList"></div>
+    </div>
+
+    <div class="footer">
+        <strong>#DoreenForWomen</strong> · every voice matters · © 2026 Hon. Doreen Jeruto Rop Kilanya for Women Representative
+    </div>
+</div>
+
+<script>
+// Upload Hero & Profile
+(function(){
+    const bgInput = document.getElementById('bgUpload');
+    const profileInput = document.getElementById('profileUpload');
+    const heroDiv = document.getElementById('heroBackground');
+    const profileContainer = document.getElementById('profileContainer');
+
+    function readAndSet(file, isBackground){
+        if(!file) return;
+        if(!file.type.startsWith('image/')) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e){
+            const result = e.target.result;
+            if(isBackground){ heroDiv.style.backgroundImage = `url('${result}')`; }
+            else {
+                profileContainer.innerHTML='';
+                profileContainer.classList.remove('default');
+                const img=document.createElement('img');
+                img.src=result;
+                img.alt='Hon. Doreen Jeruto Rop Kilanya';
+                profileContainer.appendChild(img);
+            }
+        };
+        reader.readAsDataURL(file);
+    }
+
+    bgInput.addEventListener('change', e=>{ if(e.target.files[0]) readAndSet(e.target.files[0],true); e.target.value=''; });
+    profileInput.addEventListener('change', e=>{ if(e.target.files[0]) readAndSet(e.target.files[0],false); e.target.value=''; });
+})();
+
+// Manifesto click-to-expand
+document.querySelectorAll('.issue-item').forEach(item=>{
+    item.addEventListener('click', ()=>{
+        const p = item.querySelector('p');
+        if(p.style.display==='block'){ p.style.display='none'; }
+        else{ p.style.display='block'; }
+    });
+});
+
+// Admin gallery
+const galleryUpload = document.getElementById('galleryUpload');
+const galleryContainer = document.getElementById('galleryContainer');
+galleryUpload.addEventListener('change', e=>{
+    [...e.target.files].forEach(file=>{
+        if(!file.type.startsWith('image/')) return;
+        const reader = new FileReader();
+        reader.onload = function(ev){
+            const img=document.createElement('img');
+            img.src=ev.target.result;
+            galleryContainer.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+    });
+    e.target.value='';
+});
+
+// Comments
+const commentForm = document.getElementById('commentForm');
+const commentList = document.getElementById('commentList');
+let comments = JSON.parse(localStorage.getItem('comments') || '[]');
+function renderComments(){
+    commentList.innerHTML='';
+    comments.forEach(c=>{
+        const div = document.createElement('div');
+        div.style.background='#f0f5f7';
+        div.style.borderRadius='12px';
+        div.style.padding='0.6rem 1rem';
+        div.innerHTML=`<strong>${c.name}</strong><p>${c.text}</p>`;
+        commentList.appendChild(div);
+    });
+}
+renderComments();
+
+commentForm.addEventListener('submit', e=>{
+    e.preventDefault();
+    const name=document.getElementById('commentName').value.trim();
+    const text=document.getElementById('commentText').value.trim();
+    if(!name || !text) return;
+    comments.push({name,text});
+    localStorage.setItem('comments', JSON.stringify(comments));
+    renderComments();
+    commentForm.reset();
+});
+</script>
+</body>
+</html>
