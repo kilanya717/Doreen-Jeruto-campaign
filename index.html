@@ -3,29 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doreen Jeruto Campaign</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Doreen Jeruto Campaign</title>
 </head>
 <body>
     <header>
-        <h1>Welcome to the Doreen Jeruto Campaign</h1>
+        <section class="hero">
+            <h1>Welcome to Doreen Jeruto's Campaign</h1>
+            <p>Your support can make a difference!</p>
+        </section>
     </header>
     <main>
-        <section>
-            <h2>About Us</h2>
-            <p>We are committed to making a difference in our community.</p>
+        <section class="profile-card">
+            <h2>About Doreen</h2>
+            <p>Doreen Jeruto is a passionate advocate for change...</p>
         </section>
-        <section>
-            <h2>Get Involved</h2>
-            <p>Join us in our efforts to create positive change.</p>
+        <section class="manifesto">
+            <h2>Our Manifesto</h2>
+            <p>We believe in a brighter future...</p>
         </section>
-        <section>
-            <h2>Contact Us</h2>
-            <p>Email: info@doreenjerutocampaign.com</p>
+        <section class="gallery">
+            <h2>Gallery</h2>
+            <img src="image1.jpg" alt="Gallery Image 1">
+            <img src="image2.jpg" alt="Gallery Image 2">
+        </section>
+        <section class="comments-section">
+            <h2>Comments</h2>
+            <form id="comment-form">
+                <input type="text" id="comment-input" placeholder="Leave a comment...">
+                <button type="submit">Submit</button>
+            </form>
+            <div id="comments-display"></div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2026 Doreen Jeruto Campaign</p>
-    </footer>
+    <script>
+        const form = document.getElementById('comment-form');
+        const commentsDisplay = document.getElementById('comments-display');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const commentInput = document.getElementById('comment-input');
+            const newComment = document.createElement('p');
+            newComment.textContent = commentInput.value;
+            commentsDisplay.appendChild(newComment);
+            commentInput.value = '';
+        });
+    </script>
 </body>
 </html>
