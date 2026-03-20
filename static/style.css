@@ -1,0 +1,60 @@
+.navbar {
+    background-color: #102e36;
+    color: #f5c84e;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: #f5c84e;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.hero {
+    background-color: #102e36;
+    color: white;
+    padding: 100px;
+    text-align: center;
+}
+
+.profile-card {
+    background-color: #f5c84e;
+    border: 2px solid #b9842d;
+    padding: 20px;
+    margin: 20px;
+}
+
+.manifesto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.comments-section {
+    background-color: #f5c84e;
+    padding: 20px;
+    border: 1px solid #b9842d;
+}
+
+.login-page {
+    background-color: #102e36;
+    color: white;
+    padding: 50px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.admin-dashboard {
+    background-color: #102e36;
+    color: #f5c84e;
+    padding: 20px;
+}
